@@ -40,10 +40,7 @@ app.delete('/api/doctors/:id',doctorProfileRoute)
 
 
 //DB connection
-mongoose.connect(uri, {
-    useNewUrlParser: true, // Ensures proper parsing of the connection string
-    useUnifiedTopology: true // Enables the new MongoDB driver connection management
-})
+mongoose.connect(uri)
 
     .then(() => {
         
