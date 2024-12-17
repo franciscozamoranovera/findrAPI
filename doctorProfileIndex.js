@@ -3,6 +3,7 @@ require('dotenv').config();
 const cors = require('cors') //protección api (middleware)
 
 const mongoose = require('mongoose');
+const uri = process.env.MONGODB_URI;
 const doctorProfileRoute = require('./routes/doctorProfile.route');
 const app = express()
 
@@ -39,13 +40,11 @@ app.delete('/api/doctors/:id',doctorProfileRoute)
 
 
 //DB connection
-mongoose.connect("mongodb+srv://admin:F8dxBhiBFzH458sR@findrdb.1gxc4.mongodb.net/Findr-API?retryWrites=true&w=majority&appName=FindrDB")
+mongoose.connect(uri)
     .then(() => {
         app.listen( process.env.PORT, () => {
-            console.log("Connected to Database", process.env.PORT || 8080)
+            console.log("Connected to MONGODB", process.env.PORT || 8080)
         });
-        /* app.listen(port, () => {
-            console.log(`Server is running on ${port}`)
-        }); */
+        
     })
     .catch(() => { console.log("Connection failed") });
