@@ -58,5 +58,9 @@ mongoose.connect(uri)
         });
         
     })
-    .catch(() => { console.log("Connection failed") });
+    .catch(() => { 
+        console.log("Connection failed")
+        process.exit(1)
+
+    });
 
