@@ -10,8 +10,8 @@ const app = express()
 
 
 //middleware
-app.use(express.json()); //recibir info hacia backend
 app.use(cors()); //protección
+app.use(express.json()); //recibir info hacia backend
 app.use(express.urlencoded({extended: true})); //para enviar urlencoded (postman)
 
 
@@ -51,3 +51,4 @@ mongoose.connect(uri)
         
     })
     .catch(() => { console.log("Connection failed") });
+
