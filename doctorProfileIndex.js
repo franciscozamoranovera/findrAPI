@@ -1,11 +1,12 @@
 const express = require('express');
 require('dotenv').config();
 const cors = require('cors') //protección api (middleware)
-
 const mongoose = require('mongoose');
-const uri = process.env.MONGODB_URI;
 const doctorProfileRoute = require('./routes/doctorProfile.route');
+
+
 const app = express()
+const uri = process.env.MONGODB_URI;
 
 
 
@@ -32,16 +33,16 @@ app.get('/', (req, res) => {
 app.use('/api/doctors', doctorProfileRoute)
 
 //Get one by ID
-app.get('/api/doctors/:id', doctorProfileRoute)
+//app.get('/api/doctors/:id', doctorProfileRoute)
 
 //Create
-app.post('/api/doctors', doctorProfileRoute);
+//app.post('/api/doctors', doctorProfileRoute);
 
 //Update 
-app.put('/api/doctors/:id', doctorProfileRoute)
+//app.put('/api/doctors/:id', doctorProfileRoute)
 
 //DELETE
-app.delete('/api/doctors/:id',doctorProfileRoute)
+//app.delete('/api/doctors/:id',doctorProfileRoute)
 
 
 
