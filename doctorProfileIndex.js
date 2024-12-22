@@ -10,7 +10,14 @@ const app = express()
 
 
 //middleware
-app.use(cors()); //protección
+//app.use(cors()); //protección
+
+app.use(cors({
+    origin: '*', // Allow all origins for debugging
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow all necessary methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Allow common headers
+    credentials: false // No cookies or credentials for now
+}));
 app.use(express.json()); //recibir info hacia backend
 app.use(express.urlencoded({extended: true})); //para enviar urlencoded (postman)
 
