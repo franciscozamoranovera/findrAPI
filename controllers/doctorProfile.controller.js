@@ -2,21 +2,24 @@ const DoctorProfile = require('../models/doctorProfile.model')
 
 
 
-const getDoctors = async (req = request, res = response) => {
+const getDoctors = async (req, res) => {
     //controller function:
     try {
-        const { q, nombre, apikey, page = 1, limit } = req.query; //http://localhost:8000/api/doctors?q=hola&limit=1&page=1
+        //const { q, nombre, apikey, page = 1, limit } = req.query; 
+        //req = request, res = response
+        //http://localhost:8000/api/doctors?q=hola&limit=1&page=1
 
         const doctors = await DoctorProfile.find({});
         res.status(200).json(
             {
-            doctors, //revisar doctor
-            q,
-            nombre,
-            apikey,
-            page,
-            limit
-        })
+                doctors
+                //, //revisar doctor
+                // q,
+                //nombre,
+                //apikey,
+                //page,
+                //limit
+            })
     } catch (error) {
         res.status(500).json({ message: error.message })
     }
