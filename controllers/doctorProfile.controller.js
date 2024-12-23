@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const DoctorProfile = require('../models/doctorProfile.model')
 
 
@@ -49,7 +50,7 @@ const createDoctorProfile = async (req, res) => {
                 message: 'Missing required fields in resquest'
             })
         }
-        
+
         console.log('Request body:', req.body); // Log incoming data
 
         const newDoctor = new DoctorProfile(req.body);
