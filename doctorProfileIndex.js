@@ -7,7 +7,6 @@ const doctorProfileRoute = require('./routes/doctorProfile.route');
 
 const app = express()
 const uri = process.env.MONGODB_URI;
-
 const PORT = process.env.PORT || 8080;
 
 

@@ -37,8 +37,22 @@ const getSingleDoctor = async (req, res) => {
 }
 const createDoctorProfile = async (req, res) => {
     try {
+        //Status
+        console.log('MONGO DB connection state:', mongoose.connection.readyState)
+        console.log('Received data:', JSON.stringify(req.body, null, 2));
+
+        if(!req.body.doctor || !req.body.doctor.doctorName) {
+            console.log('Missing required fields');
+            return res.status(400).json({
+                status: 'error',
+                message: 'Missing required fields in resquest'
+            })
+        }
+
         const doctor = await DoctorProfile.create(req.body);
         res.status(200).json(doctor);
+
+        
     } catch (error) {
         res.status(500).json({ message: error.message })
     }
