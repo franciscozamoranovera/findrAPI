@@ -55,7 +55,7 @@ const createDoctorProfile = async (req, res) => {
 
         const newDoctor = new DoctorProfile(req.body);
         const saveDoctor = await newDoctor.save();
-        console.log('Saved Doctor:', savedDoctor); // Log saved data
+        console.log('Saved Doctor:', saveDoctor); // Log saved data
 
         res.status(201).json(saveDoctor);
 
