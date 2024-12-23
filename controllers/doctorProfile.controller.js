@@ -49,10 +49,12 @@ const createDoctorProfile = async (req, res) => {
             })
         }
 
-        const doctor = await DoctorProfile.create(req.body);
-        res.status(200).json(doctor);
+        const newDoctor = new DoctorProfile(req.body);
+        const saveDoctor = await newDoctor.save();
 
-        
+        res.status(201).json(saveDoctor);
+
+
     } catch (error) {
         res.status(500).json({ message: error.message })
     }
