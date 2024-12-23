@@ -8,6 +8,8 @@ const doctorProfileRoute = require('./routes/doctorProfile.route');
 const app = express()
 const uri = process.env.MONGODB_URI;
 
+const PORT = process.env.PORT || 8080;
+
 
 
 //middleware
@@ -19,9 +21,9 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization'], // Allow common headers
     credentials: false // No cookies or credentials for now
 }));
+
 app.use(express.json()); //recibir info hacia backend
 app.use(express.urlencoded({extended: true})); //para enviar urlencoded (postman)
-
 
 
 app.get('/', (req, res) => {
@@ -51,11 +53,17 @@ app.use('/api/doctors', doctorProfileRoute)
 mongoose.connect(uri)
 
     .then(() => {
+
+        app.listen(PORT, '0.0.0.0', () => {
+            console.log(`Server is running on port ${PORT}`);
+            console.log('Connected to MongoDB');
+        });
+
         
-        app.listen( process.env.PORT, () => {
+        /* app.listen( process.env.PORT, () => {
             console.log("Connected to MONGODB", process.env.PORT || 8080)
             
-        });
+        }); */
         
     })
     .catch(() => { 
