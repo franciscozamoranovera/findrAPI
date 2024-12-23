@@ -40,6 +40,7 @@ const createDoctorProfile = async (req, res) => {
         //Status
         console.log('MONGO DB connection state:', mongoose.connection.readyState)
         console.log('Received data:', JSON.stringify(req.body, null, 2));
+        
 
         if(!req.body.doctor || !req.body.doctor.doctorName) {
             console.log('Missing required fields');
@@ -48,9 +49,12 @@ const createDoctorProfile = async (req, res) => {
                 message: 'Missing required fields in resquest'
             })
         }
+        
+        console.log('Request body:', req.body); // Log incoming data
 
         const newDoctor = new DoctorProfile(req.body);
         const saveDoctor = await newDoctor.save();
+        console.log('Saved Doctor:', savedDoctor); // Log saved data
 
         res.status(201).json(saveDoctor);
 
@@ -59,6 +63,8 @@ const createDoctorProfile = async (req, res) => {
         res.status(500).json({ message: error.message })
     }
 }
+
+
 const updateDoctorProfile = async (req, res) => {
     try {
         //destructuración
