@@ -51,7 +51,8 @@ const DoctorSchema = mongoose.Schema(
         },
         idNumber: {
             type: Number,
-            required: true
+            required: true,
+            unique: true
         },
         prevision: [{
             type: String,
