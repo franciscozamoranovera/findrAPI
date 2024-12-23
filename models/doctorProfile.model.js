@@ -69,6 +69,10 @@ const DoctorSchema = mongoose.Schema(
                 required: true
 
             },
+            run: {
+                type: Number,
+                required: true
+            },
             age: {
                 type: Number,
                 required: false

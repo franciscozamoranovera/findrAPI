@@ -72,6 +72,7 @@ const updateDoctorProfile = async (req, res) => {
         const { id } = req.params;
 
         const doctor = await DoctorProfile.findByIdAndUpdate(id, req.body);
+
         if (!doctor) {
             return res.status(404).json({ message: "Doctor not found" })
         }
