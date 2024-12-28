@@ -13,16 +13,16 @@ const DoctorSchema = mongoose.Schema(
             required: true,
 
         },
-        speciality: {
+        speciality: [{
             type: String,
             required: false,
 
-        },
-        subSpeciality: {
+        }],
+        subSpeciality: [{
             type: String,
             required: false,
 
-        },
+        }],
         diseaseSpecialist: [{
             type: String,
             required: true
