@@ -25,7 +25,7 @@ const DoctorSchema = mongoose.Schema(
         },
         diseaseSpecialist: [{
             type: String,
-            required: true,
+            required: true
 
         }],
         specialityAndBackground: [{
@@ -43,64 +43,48 @@ const DoctorSchema = mongoose.Schema(
 
         },
         healthCareCenter: [{
-            private: {
-                name: {
-                    type: String,
-                    required: false
-                },
-                address: {
-                    type: String,
-                    required: false
-                },
-                comuna: {
-                    type: String,
-                    required: false
-                },
-                fonasa: {
-                    type: Boolean,
-                    require: false
-                },
-                isapre: {
-                    type: Boolean,
-                    require: false
-                },
-                fonasaPrice: {
-                    type: Number,
-                    require: false
-                },
-                isaprePrice: {
-                    type: Number,
-                    require: false
-                }
+            type: {
+                type: String,
+                enum: ['private', 'nonPrivate'],
+                required: true,
+                default: "No informado"
             },
-            nonPrivate: {
-                name: {
-                    type: String,
-                    required: false
-                },
-                address: {
-                    type: String,
-                    required: false
-                },
-                comuna: {
-                    type: String,
-                    required: false
-                },
-                fonasa: {
-                    type: Boolean,
-                    require: false
-                },
-                fonasaPrice: {
-                    type: Number,
-                    require: false
-                },
-                isaprePrice: {
-                    type: Number,
-                    require: false
-                }
+            name: {
+                type: String,
+                required: false,
+                default: "No informado"
+            },
+            address: {
+                type: String,
+                required: false,
+                default: "No informado"
+            },
+            comuna: {
+                type: String,
+                required: false,
+                default: "No informado"
+            },
+            fonasa: {
+                type: Boolean,
+                required: false,
+                default: "No informado"
+            },
+            isapre: {
+                type: Boolean,
+                required: false,
+                default: "No informado"
+
+            },
+            fonasaPrice: {
+                type: Number,
+                required: false,
+                default: "No informado"
+            },
+            isaprePrice: {
+                type: Number,
+                required: false,
+                default: "No informado"
             }
-
-
         }],
         region: {
             type: String,
@@ -117,7 +101,8 @@ const DoctorSchema = mongoose.Schema(
         },
         prevision: [{
             type: String,
-            required: false
+            required: false,
+            default: "No informado"
         }],
 
 
