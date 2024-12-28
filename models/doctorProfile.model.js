@@ -28,9 +28,14 @@ const DoctorSchema = mongoose.Schema(
             required: true,
 
         }],
+        specialityAndBackground: [{
+            type: String,
+            required: false,
+
+        }],
         attentionType: [{
             type: String,
-            required: true
+            required: false
         }],
         background: {
             type: String,
@@ -39,15 +44,15 @@ const DoctorSchema = mongoose.Schema(
         },
         healthCareCenter: [{
             type: String,
-            required: true
+            required: false
         }],
         region: {
             type: String,
-            required: true
+            required: false
         },
         comuna: {
             type: String,
-            required: true
+            required: false
         },
         idNumber: {
             type: Number,
@@ -56,28 +61,26 @@ const DoctorSchema = mongoose.Schema(
         },
         prevision: [{
             type: String,
-            required: true
+            required: false
         }],
 
-        doctor: {
-            doctorName: {
-                type: String,
-                required: true
 
-            }, doctorLastName: {
-                type: String,
-                required: true
+        doctorName: {
+            type: String,
+            required: true
 
-            },
-            run: {
-                type: String,
-                required: true
-            },
-            age: {
-                type: Number,
-                required: false
-            }
+        }, doctorLastName: {
+            type: String,
+            required: false
 
+        },
+        run: {
+            type: String,
+            required: true
+        },
+        age: {
+            type: Number,
+            required: false
         },
 
         about: {
