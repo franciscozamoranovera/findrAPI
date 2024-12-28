@@ -146,6 +146,12 @@ const DoctorSchema = mongoose.Schema(
                 title: String,
                 body: String,
             }
+        }],
+
+        awardsAndDistinctions: [{
+            date: Date,
+            title: String,
+            body: String,
         }]
 
     },
