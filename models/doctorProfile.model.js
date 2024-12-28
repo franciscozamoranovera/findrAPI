@@ -90,10 +90,10 @@ const DoctorSchema = mongoose.Schema(
             type: String,
             required: false
         },
-        comuna: {
+        comuna: [{
             type: String,
             required: false
-        },
+        }],
         idNumber: {
             type: Number,
             required: true,
