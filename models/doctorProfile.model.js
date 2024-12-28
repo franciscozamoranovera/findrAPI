@@ -70,7 +70,7 @@ const DoctorSchema = mongoose.Schema(
 
             },
             run: {
-                type: Number,
+                type: String,
                 required: true
             },
             age: {
