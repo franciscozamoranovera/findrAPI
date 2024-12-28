@@ -69,11 +69,14 @@ const DoctorSchema = mongoose.Schema(
             type: String,
             required: true
 
-        }, doctorLastName: {
+        },
+
+        doctorLastName: {
             type: String,
             required: false
 
         },
+
         run: {
             type: String,
             required: true

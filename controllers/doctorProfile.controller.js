@@ -43,14 +43,14 @@ const createDoctorProfile = async (req, res) => {
         console.log('Received data:', JSON.stringify(req.body, null, 2));
         
 
-        if(!req.body.doctor || !req.body.doctor.doctorName) {
+       /*  if(!req.body.doctor || !req.body.doctor.doctorName) {
             console.log('Missing required fields');
             return res.status(400).json({
                 status: 'error',
                 message: 'Missing required fields in resquest'
             })
         }
-
+ */
         console.log('Request body:', req.body); // Log incoming data
 
         const newDoctor = new DoctorProfile(req.body);
