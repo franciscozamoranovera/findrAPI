@@ -43,8 +43,64 @@ const DoctorSchema = mongoose.Schema(
 
         },
         healthCareCenter: [{
-            type: String,
-            required: false
+            private: {
+                name: {
+                    type: String,
+                    required: false
+                },
+                address: {
+                    type: String,
+                    required: false
+                },
+                comuna: {
+                    type: String,
+                    required: false
+                },
+                fonasa: {
+                    type: Boolean,
+                    require: false
+                },
+                isapre: {
+                    type: Boolean,
+                    require: false
+                },
+                fonasaPrice: {
+                    type: Number,
+                    require: false
+                },
+                isaprePrice: {
+                    type: Number,
+                    require: false
+                }
+            },
+            nonPrivate: {
+                name: {
+                    type: String,
+                    required: false
+                },
+                address: {
+                    type: String,
+                    required: false
+                },
+                comuna: {
+                    type: String,
+                    required: false
+                },
+                fonasa: {
+                    type: Boolean,
+                    require: false
+                },
+                fonasaPrice: {
+                    type: Number,
+                    require: false
+                },
+                isaprePrice: {
+                    type: Number,
+                    require: false
+                }
+            }
+
+
         }],
         region: {
             type: String,
