@@ -149,6 +149,12 @@ const DoctorSchema = mongoose.Schema(
         }],
 
         awardsAndDistinctions: [{
+            type: {
+                type: String,
+                enum: ['award', 'distinction'],
+                required: false,
+                default: "No informado"
+            },
             date: Date,
             title: String,
             body: String,
@@ -159,11 +165,17 @@ const DoctorSchema = mongoose.Schema(
         }],
 
         jobExperience: [{
+            type: {
+                type: String,
+                enum: ['experience 1', 'experience 2', 'experience 3', 'experience 4','experience 5','experience 6'],
+                required: false,
+                default: "No informado"
+            },
             initDate: {
-                date: Date,
+                type: Date,
             },
             endDate: {
-                date: Date,
+                type: Date,
             },
             title: {
                 type: String
