@@ -84,6 +84,11 @@ const DoctorSchema = mongoose.Schema(
                 type: Number,
                 required: false,
                 default: "No informado"
+            },
+            particularPrice: {
+                type: Number,
+                required: false,
+                default: "No informado"
             }
         }],
         region: {
