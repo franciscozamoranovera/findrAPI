@@ -167,7 +167,7 @@ const DoctorSchema = mongoose.Schema(
         jobExperience: [{
             type: {
                 type: String,
-                enum: ['experience 1', 'experience 2', 'experience 3', 'experience 4','experience 5','experience 6'],
+                enum: ['experience', 'other'],
                 required: false,
                 default: "No informado"
             },
