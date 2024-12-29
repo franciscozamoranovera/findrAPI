@@ -85,7 +85,7 @@ const DoctorSchema = mongoose.Schema(
                 required: false,
                 default: "No informado"
             },
-            particularPrice: {
+            particularPrevisionPrice: {
                 type: Number,
                 required: false,
                 default: "No informado"
