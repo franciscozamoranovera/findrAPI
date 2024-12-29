@@ -152,6 +152,25 @@ const DoctorSchema = mongoose.Schema(
             date: Date,
             title: String,
             body: String,
+        }],
+
+        languages: [{
+            type: String
+        }],
+
+        jobExperience: [{
+            initDate: {
+                date: Date,
+            },
+            endDate: {
+                date: Date,
+            },
+            title: {
+                type: String
+            },
+            body: {
+                type: String
+            }
         }]
 
     },
