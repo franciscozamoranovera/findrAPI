@@ -140,16 +140,25 @@ const DoctorSchema = mongoose.Schema(
         },
 
         investigationAndProjects: [{
-            investigations: {
-                date: Date,
-                title: String,
-                body: String,
-
+            type: {
+                type: String,
+                enum: ['investigation', 'project'],
+                required: false,
+                default: "No informado"
             },
-            projects: {
-                date: Date,
-                title: String,
-                body: String,
+            initDate: {
+                type: Date,
+                default: null
+            },
+            endDate: {
+                type: Date,
+                default: null
+            },
+            title: {
+                type: String
+            },
+            body: {
+                type: String
             }
         }],
 

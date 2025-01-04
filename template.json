@@ -1,0 +1,117 @@
+{
+    "about": {
+        "body": ""
+    },
+    "profilePhoto": "",
+    "title": "Médico Cirujano",
+    "speciality": [
+        "Cardiología"
+    ],
+    "subSpeciality": [
+        "Cardiología"
+    ],
+    "diseaseSpecialist": [
+        "Enfermedad coronaria"
+    ],
+    "specialityAndBackground": [
+        "Cardiología (CONACEM)"
+    ],
+    "attentionType": [
+        "Presencial",
+        "Telemedicina"
+    ],
+    "background": "EUNACOM",
+    "healthCareCenter": [
+        {
+            "type": "nonPrivate",
+            "name": "Centro Médico Manuel Montt",
+            "address": "Avenida Manuel Montt 427",
+            "comuna": "Providencia",
+            "fonasa": true,
+            "isapre": true,
+            "fonasaPrice": null,
+            "isaprePrice": null,
+            "particularPrevisionPrice": null
+        }
+    ],
+    "region": "Región Metropolitana",
+    "comuna": [
+        "Providencia"
+    ],
+    "idNumber": 0,
+    "prevision": [
+        "Isapre",
+        "Fonasa"
+    ],
+    "doctorName": "",
+    "doctorLastName": "",
+    "run": "",
+    "age": 0,
+    "investigationAndProjects": [
+        {
+            "investigations": {
+                "date": null,
+                "title": "No informado",
+                "body": "No informado"
+            },
+            "projects": {
+                "date": null,
+                "title": "No informado",
+                "body": "No informado"
+            }
+        }
+    ],
+    "jobExperience": [
+        {
+            "type": "experience",
+            "initDate": null,
+            "endDate": null,
+            "title": "",
+            "body": ""
+        },
+        { 
+            "type": "other",
+            "initDate": null,
+            "endDate": null,
+            "title": "",
+            "body": ""
+        },
+        { 
+            "type": "",
+            "initDate": null,
+            "endDate": null,
+            "title": "",
+            "body": ""
+        },
+        { 
+            "type": "",
+            "initDate": null,
+            "endDate": null,
+            "title": "",
+            "body": ""
+        },
+        { 
+            "type": "",
+            "initDate": null,
+            "endDate": null,
+            "title": "",
+            "body": ""
+        },
+        { 
+            "type": "",
+            "initDate": null,
+            "endDate": null,
+            "title": "",
+            "body": ""
+        }
+    ],
+
+    "languages": [],
+
+    "awardsAndDistinctions" :[{
+        "type":"award",
+        "date":null,
+        "title":"",
+        "body":""
+    }]
+}
