@@ -64,6 +64,12 @@ const DoctorSchema = mongoose.Schema(
                 required: false,
                 default: "No informado"
             },
+
+            phoneNumber: {
+                type: Number,
+                required: false,
+            }
+            ,
             fonasa: {
                 type: Boolean,
                 required: false,
@@ -78,17 +84,14 @@ const DoctorSchema = mongoose.Schema(
             fonasaPrice: {
                 type: Number,
                 required: false,
-                default: "No informado"
             },
             isaprePrice: {
                 type: Number,
                 required: false,
-                default: "No informado"
             },
             particularPrevisionPrice: {
                 type: Number,
                 required: false,
-                default: "No informado"
             }
         }],
         region: {

@@ -1,6 +1,6 @@
 {
     "about": {
-        "body": ""
+        "body": "ESPECIALISTA EN CARDIOLOGIA Y ARRITMIAS. AMPLIA EXPERIENCIA EN PACIENTES CON ALTO RIESGO CARDIOVASCULAR Y EN CUIDADOS INTENSIVOS. MANEJO DE PACIENTES CARDIOOPERADOS, PACIENTES CON MARCAPASOS, CARDIODESFIBRILADOR, RESINCRONIZADORES, ETC. MANEJO DE PACIENTE PRE Y POST QUIRUGICOS DE CIRUGIAS PLASTICAS O BARIATRICAS. MANEJO DEL PACIENTE DEPORTISTA. MANEJO DEL PACIENTE CON OBESIDAD. APTO FISICO. CERTIFICACION LABORAL."
     },
     "profilePhoto": "",
     "title": "Médico Cirujano",
@@ -11,7 +11,18 @@
         "Cardiología"
     ],
     "diseaseSpecialist": [
-        "Enfermedad coronaria"
+        "Enfermedad coronaria",
+        "Angina de pecho",
+        "Enfermedad valvular",
+        "Cardiopatía congénita",
+        "Hipertensión pulmonar",
+        "Arritmias",
+        "Cardiopatías",
+        "Síndrome coronario agudo",
+        "Enfermedades del corazón en niños",
+        "Insuficiencia cardiaca",
+        "Hipertensión arterial",
+        "Miocardiopatía"
     ],
     "specialityAndBackground": [
         "Cardiología (CONACEM)"
@@ -31,34 +42,29 @@
             "isapre": true,
             "fonasaPrice": null,
             "isaprePrice": null,
-            "particularPrevisionPrice": null
+            "particularPrevisionPrice": 40000
         }
     ],
     "region": "Región Metropolitana",
     "comuna": [
         "Providencia"
     ],
-    "idNumber": 0,
+    "idNumber": 205515,
     "prevision": [
         "Isapre",
         "Fonasa"
     ],
-    "doctorName": "",
+    "doctorName": "Fernando Antonio Sanchez Hurtado",
     "doctorLastName": "",
-    "run": "",
-    "age": 0,
+    "run": "238360757",
+    "age": 50,
     "investigationAndProjects": [
         {
-            "investigations": {
-                "date": null,
-                "title": "No informado",
-                "body": "No informado"
-            },
-            "projects": {
-                "date": null,
-                "title": "No informado",
-                "body": "No informado"
-            }
+            "type": "experience",
+            "initDate": null,
+            "endDate": null,
+            "title": "CLINICA RED SALUD TABANCURA SANTIAGO DE CHILE",
+            "body": ""
         }
     ],
     "jobExperience": [
@@ -66,52 +72,53 @@
             "type": "experience",
             "initDate": null,
             "endDate": null,
-            "title": "",
+            "title": "CLINICA INDISA SANTIAGO DE CHILE",
             "body": ""
         },
         { 
-            "type": "other",
+            "type": "experience",
             "initDate": null,
             "endDate": null,
-            "title": "",
+            "title": "CLINICA RED SALUD TABANCURA SANTIAGO DE CHILE",
             "body": ""
         },
         { 
-            "type": "",
+            "type": "experience",
             "initDate": null,
             "endDate": null,
-            "title": "",
+            "title": "CLINICA DAVILA SANTIAGO DE CHILE",
             "body": ""
         },
         { 
-            "type": "",
+            "type": "experience",
             "initDate": null,
             "endDate": null,
-            "title": "",
+            "title": "HOSPITAL DIPRECA SANTIAGO DE CHILE",
             "body": ""
         },
         { 
-            "type": "",
+            "type": "experience",
             "initDate": null,
             "endDate": null,
-            "title": "",
+            "title": "HOSPITAL NAVAL DE VIÑA DEL MAR",
             "body": ""
         },
         { 
-            "type": "",
+            "type": "experience",
             "initDate": null,
             "endDate": null,
-            "title": "",
+            "title": "HOSPITAL GUSTAVO FRICKE VIÑA DEL MAR",
             "body": ""
         }
     ],
 
-    "languages": [],
+    "languages": ["Español", "Inglés"],
 
     "awardsAndDistinctions" :[{
         "type":"award",
-        "date":null,
-        "title":"",
+        "date":"2016-11-01",
+        "title":"PREMIO MEJOR TRABAJO DE GRADO AMILOIDOSIS CARDIACA",
         "body":""
     }]
 }
+
