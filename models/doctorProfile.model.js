@@ -65,11 +65,14 @@ const DoctorSchema = mongoose.Schema(
                 default: "No informado"
             },
 
-            phoneNumber: {
-                type: Number,
+            phoneNumberOp1: {
+                type: String,
                 required: false,
-            }
-            ,
+            },
+            phoneNumberOp2: {
+                type: String,
+                required: false,
+            },
             fonasa: {
                 type: Boolean,
                 required: false,
@@ -92,6 +95,10 @@ const DoctorSchema = mongoose.Schema(
             particularPrevisionPrice: {
                 type: Number,
                 required: false,
+            },
+            Note: {
+                type: String,
+                required: false
             }
         }],
         region: {
