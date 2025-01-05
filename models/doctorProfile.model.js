@@ -175,7 +175,7 @@ const DoctorSchema = mongoose.Schema(
         awardsAndDistinctions: [{
             type: {
                 type: String,
-                enum: ['award', 'distinction'],
+                enum: ['award', 'distinction', 'No informado'],
                 required: false,
                 default: "No informado"
             },
@@ -191,7 +191,7 @@ const DoctorSchema = mongoose.Schema(
         jobExperience: [{
             type: {
                 type: String,
-                enum: ['experience', 'other'],
+                enum: ['experience', 'other', 'No informado'],
                 required: false,
                 default: "No informado"
             },
