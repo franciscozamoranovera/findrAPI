@@ -45,7 +45,7 @@ const DoctorSchema = mongoose.Schema(
         healthCareCenter: [{
             type: {
                 type: String,
-                enum: ['private', 'nonPrivate'],
+                enum: ['private', 'nonPrivate', 'No informado'],
                 required: true,
                 default: "No informado"
             },
@@ -53,6 +53,10 @@ const DoctorSchema = mongoose.Schema(
                 type: String,
                 required: false,
                 default: "No informado"
+            },
+            website: {
+                type: String,
+                required: false,
             },
             address: {
                 type: String,
