@@ -96,7 +96,7 @@ const DoctorSchema = mongoose.Schema(
                 type: Number,
                 required: false,
             },
-            Note: {
+            note: {
                 type: String,
                 required: false
             }
