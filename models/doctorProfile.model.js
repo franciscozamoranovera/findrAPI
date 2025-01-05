@@ -152,7 +152,7 @@ const DoctorSchema = mongoose.Schema(
         investigationAndProjects: [{
             type: {
                 type: String,
-                enum: ['investigation', 'project'],
+                enum: ['investigation', 'project', null],
                 required: false,
                 default: "No informado"
             },
