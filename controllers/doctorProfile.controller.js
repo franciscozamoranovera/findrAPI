@@ -6,20 +6,36 @@ const DoctorProfile = require('../models/doctorProfile.model')
 const getDoctors = async (req, res) => {
     //controller function:
     try {
-        //const { q, nombre, apikey, page = 1, limit } = req.query; 
-        //req = request, res = response
-        //http://localhost:8000/api/doctors?q=hola&limit=1&page=1
+        const { doctorName, speciality, subSpeciality, diseaseSpecialist, region, comuna } = req.query;
 
-        const doctors = await DoctorProfile.find({});
+        //Filter object (query Object in MongoDB)
+        const filter = {};
+
+        //Add each parameter to the filter if it exists in the req.
+        if(doctorName) filter.doctorName = {$regex: doctorName, $options: 'i'} //regex: operator in MDB, allow partial matching. $options: makes case sensitive.
+        if(speciality) filter.speciality = {$regex: speciality, $options:'i'};
+        if(subSpeciality) filter.subSpeciality ={$regex: subSpeciality, $options:'i'};
+        if(diseaseSpecialist) filter.diseaseSpecialist = {$regex: diseaseSpecialist, $options:'i'};
+        if(region) filter.region = region;
+        if(comuna) filter.comuna = comuna;
+        
+        const skip = (page - 1) * limit; 
+        const limitValue = parseInt(limit); //parseInt ensure the limit is a number, not string.
+
+        const total = await DoctorProfile.countDocuments(filter);
+
+        const doctors = await DoctorProfile.find(filter).skip(skip).limit(limitValue);
+ 
         res.status(200).json(
             {
-                doctors
-                //, //revisar doctor
-                // q,
-                //nombre,
-                //apikey,
-                //page,
-                //limit
+                doctors,
+                pagination: {
+                    total,
+                    page: parseInt(page),
+                    pages: Math.ceil(total/limitValue)
+                }
+
+               
             })
     } catch (error) {
         res.status(500).json({ message: error.message })
@@ -28,18 +44,12 @@ const getDoctors = async (req, res) => {
 
 const getQueryInputData = async (req, res) => {
 
-    /* TODO: 
-        1. Crear endpoint con todos los nombres, sub-especialidades y enfermedades que retornen una lista filtrada
-        
-        Note: usar lógica creada en frontend.
-    
-    */
-
     try {
 
-        //const { doctorName } = req.params
+        //Main filter using monsoose settings
         const doctors = await DoctorProfile.find({}, 'doctorName speciality subSpeciality diseaseSpecialist');
-        
+
+
         // Helper functions
 
         //Delete duplicate words with accents, left the word with it.
@@ -61,7 +71,8 @@ const getQueryInputData = async (req, res) => {
         // Function to filter duplicates keeping accented versions.
         const filterDuplicatesKeepingAccents = (items) => {
             const seen = new Map();
-            
+
+
             // First pass: store all items with their normalized versions
             items.forEach(item => {
                 const normalized = normalizeForComparison(item);
@@ -69,9 +80,11 @@ const getQueryInputData = async (req, res) => {
                     seen.set(normalized, item);
                 }
             });
-            
+
             return Array.from(seen.values());
         };
+
+
 
         // Extract unique values from each field across all doctors
         const uniqueDoctorNames = filterDuplicatesKeepingAccents(
@@ -79,7 +92,7 @@ const getQueryInputData = async (req, res) => {
         );
 
         const uniqueSpecialities = filterDuplicatesKeepingAccents(
-            doctors.flatMap(doc => 
+            doctors.flatMap(doc =>
                 Array.isArray(doc.speciality)
                     ? doc.speciality.map(s => capitalizeFirstLetter(s || ''))
                     : capitalizeFirstLetter(doc.speciality || '')
@@ -87,7 +100,7 @@ const getQueryInputData = async (req, res) => {
         );
 
         const uniqueSubSpecialities = filterDuplicatesKeepingAccents(
-            doctors.flatMap(doc => 
+            doctors.flatMap(doc =>
                 Array.isArray(doc.subSpeciality)
                     ? doc.subSpeciality.map(s => capitalizeFirstLetter(s || ''))
                     : capitalizeFirstLetter(doc.subSpeciality || '')
@@ -95,7 +108,7 @@ const getQueryInputData = async (req, res) => {
         );
 
         const uniqueDiseaseSpecialists = filterDuplicatesKeepingAccents(
-            doctors.flatMap(doc => 
+            doctors.flatMap(doc =>
                 Array.isArray(doc.diseaseSpecialist)
                     ? doc.diseaseSpecialist.map(s => capitalizeFirstLetter(s || ''))
                     : capitalizeFirstLetter(doc.diseaseSpecialist || '')
@@ -108,21 +121,30 @@ const getQueryInputData = async (req, res) => {
             specialities: uniqueSpecialities.filter(Boolean),
             subSpecialities: uniqueSubSpecialities.filter(Boolean),
             diseaseSpecialists: uniqueDiseaseSpecialists.filter(Boolean)
+
+            /* Note:
+             1. "doctorNames:", "specialities:.,..." are keys (property name).
+             2. "uniqueDoctorNames.filter(Boolean)" are values.
+
+            allUniqueData have all categorized.
+
+            //Verbosely written:
+
+            op1:
+            uniqueDoctorNames.filter(name => Boolean(name))
+            
+            op2:
+            uniqueDoctorNames.filter(name => name !== "" && name !== null && name !== undefine
+            
+            */
+
         };
 
-        // Replace the doctors array with the processed data
-        //doctors = allUniqueData;
         res.status(200).json(
             {
-
                 allUniqueData
-                //, //revisar doctor
-                // q,
-                //nombre,
-                //apikey,
-                //page,
-                //limit
             })
+
     } catch (error) {
         res.status(500).json({ message: error.message })
     }
