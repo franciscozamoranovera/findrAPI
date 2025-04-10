@@ -24,7 +24,10 @@ const getDoctors = async (req, res) => {
 
         const total = await DoctorProfile.countDocuments(filter);
 
-        const doctors = await DoctorProfile.find(filter).skip(skip).limit(limitValue);
+        const doctors = await DoctorProfile.find(filter)
+        .collation({locale: 'es', strength: 1}) //strength makes the comparison ignore diacritics.
+        .skip(skip)
+        .limit(limitValue);
  
         res.status(200).json(
             {
