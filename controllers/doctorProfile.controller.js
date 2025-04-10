@@ -6,7 +6,7 @@ const DoctorProfile = require('../models/doctorProfile.model')
 const getDoctors = async (req, res) => {
     //controller function:
     try {
-        const { doctorName, speciality, subSpeciality, diseaseSpecialist, region, comuna } = req.query;
+        const { doctorName, speciality, subSpeciality, diseaseSpecialist, region, comuna, page = 1, limit = 10 } = req.query;
 
         //Filter object (query Object in MongoDB)
         const filter = {};
@@ -36,7 +36,7 @@ const getDoctors = async (req, res) => {
                 }
 
                
-            })
+            });
     } catch (error) {
         res.status(500).json({ message: error.message })
     }
